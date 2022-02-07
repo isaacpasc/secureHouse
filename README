@@ -1,0 +1,31 @@
+Isaac Paschall
+
+
+run: ./secure_house <owner_name> <key_1> <key_2> ... <key_n>
+where <owner_name> is the name of the owner, and <key_1> through <key_n> are all authorized keys for the house.
+
+insert key: INSERT KEY <user_name> <key>
+turn key: TURN KEY <user_name>
+enter home: ENTER HOUSE <user_name>
+check who is in home: WHO'S INSIDE?
+change keys(only as owner): CHANGE LOCKS <user_name> <key_1> <key_2> ... <key_n>
+leave the home LEAVE HOUSE <user_name>
+
+
+ex input:
+INSERT KEY adam key
+TURN KEY adam
+ENTER HOUSE adam
+INSERT KEY pat foobar
+TURN KEY pat
+ENTER HOUSE pat
+WHO'S INSIDE?
+
+ex output:
+KEY key INSERTED BY adam
+FAILURE adam UNABLE TO TURN KEY key
+ACCESS DENIED
+KEY foobar INSERTED BY pat
+SUCCESS pat TURNS KEY foobar
+ACCESS ALLOWED
+pat
